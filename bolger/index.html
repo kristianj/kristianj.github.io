@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+	<meta charset="utf-8">
+	<head>
+		<title>bølgetemmer</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
+		<link href="dist/styles/styles.css" rel="stylesheet">		
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>bølgetemmer</h1>
+				<!-- MIDI activity -->
+			</header>
+			<canvas id="preview"></canvas>
+			<div id="presets">
+				
+			</div>
+			<section class="top">
+				<div class="controls controls-osc">
+					<h2>osc 1</h2>
+					<div class="control">
+						<input id="osc-level-1" class="osc-param" type="range" data-osc="0" data-param="level" min="0" max="1" step="0.01" value="0.6">
+						<label for="osc-level-1">level</label>
+					</div>
+					<div class="control">
+						<input id="osc-period-1" class="osc-param" type="range" data-osc="0" data-param="period" data-round="1" min="1" max="4" step="0.1" value="1">
+						<label for="osc-period-1">freq</label>
+					</div>
+					<div class="control">
+						<input id="osc-tune-1" class="osc-param" type="range" data-osc="0" data-param="tune" min="-1" max="1" step="0.02" value="0">
+						<label for="osc-tune-1">tune</label>
+					</div>
+				</div>
+				<div class="controls controls-osc">
+					<h2>osc 2</h2>
+					<div class="control">
+						<input id="osc-level-2" class="osc-param" type="range" data-osc="1" data-param="level" min="0" max="1" step="0.01" value="0.4">
+						<label for="osc-level-2">level</label>
+					</div>
+					<div class="control">
+						<input id="osc-period-2" class="osc-param" type="range" data-osc="1" data-param="period" data-round="1" min="1" max="4" step="0.1" value="2">
+						<label for="osc-period-2">freq</label>
+					</div>
+					<div class="control">
+						<input id="osc-tune-2" class="osc-param" type="range" data-osc="1" data-param="tune" min="-1" max="1" step="0.02" value="0">
+						<label for="osc-tune-2">tune</label>
+					</div>
+				</div>				
+			</section>
+			<section>
+				<div class="controls controls-osc">
+					<h2>osc 3</h2>
+					<div class="control">
+						<input id="osc-level-3" class="osc-param" type="range" data-osc="2" data-param="level" min="0" max="1" step="0.01" value="0.6">
+						<label for="osc-level-3">level</label>
+					</div>
+					<div class="control">
+						<input id="osc-period-3" class="osc-param" type="range" data-osc="2" data-param="period" data-round="1" min="1" max="4" step="0.1" value="2">
+						<label for="osc-period-3">freq</label>
+					</div>
+					<div class="control">
+						<input id="osc-tune-3" class="osc-param" type="range" data-osc="2" data-param="tune" min="-1" max="1" step="0.02" value="0">
+						<label for="osc-tune-3">tune</label>
+					</div>
+				</div>
+				<div class="controls">
+					<h2>common</h2>
+					<div class="control">
+						<input id="decay" class="synth-param" type="range" data-param="decay" min="0.01" max="2" step="0.01" value="1">
+						<label for="decay">decay</label>
+					</div>
+					<div class="control">
+						<input id="multiply" class="synth-param" type="range" data-param="multiply" min="1" max="6" step="0.01" value="2">
+						<label for="multiply">sparkle</label>
+				   </div>
+				   <div class="control">
+				   		<input id="gain" class="synth-param" type="range" data-param="gain" min="0.01" max="1" step="0.01" value="0.5">
+					   <label for="gain">gain</label>
+				   </div>
+				</div>
+			</section>
+			<section>
+				<div class="controls controls-delay">
+					<!-- <div class="control-toggle">
+						<input class="tgl tgl-flat" id="delay-toggle" type="checkbox" checked />
+						<label class="tgl-btn" for="delay-toggle"></label>
+					</div> -->
+					<h2>delay</h2>
+					<div class="control">
+						<input id="delaytime" class="delay-param" data-param="time" type="range" min="0" max="1" step="0.01" value="0.45">
+						<label for="delaytime">time</label>
+					</div>
+					<div class="control">
+						<input id="delaymix" class="delay-param" data-param="mix" type="range" min="0" max="1" step="0.01" value="0.1">
+						<label for="delaymix">mix</label>
+					</div>
+					<div class="control">
+						<input id="delayfeedback" class="delay-param" data-param="feedback" type="range" min="0.01" max="1" step="0.01" value="0.4">
+						<label for="delayfeedback">feedback</label>
+					</div>
+				</div>
+				<div class="controls controls-reverb">
+					<!-- <div class="control-toggle">
+						<input class="tgl tgl-flat" id="reverb-toggle" type="checkbox" checked />
+						<label class="tgl-btn" for="reverb-toggle"></label>
+					</div> -->			
+					<h2>reverb</h2>
+					<div class="control">
+						<input id="reverbtime" class="reverb-param" data-param="time" type="range" min="0.1" max="3" step="0.05" value="1">
+						<label for="reverbtime">time</label>
+					</div>
+					<div class="control">
+						<input id="reverbdecay" class="reverb-param" data-param="decay" type="range" min="0.1" max="3" step="0.05" value="1">
+						<label for="reverbdecay">decay</label>
+					</div>					
+					<div class="control">
+						<input id="reverbmix" class="reverb-param" data-param="mix" type="range" min="0.01" max="1" step="0.01" value="0.5">
+						<label for="reverbmix">mix</label>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="controls controls-noise">
+					<h2>extras</h2>
+					<div class="control">
+						<input id="noise" class="noise-param" data-param="noise" type="range" min="0" max="1" step="0.01" value="0">
+						<label for="noise">noise</label>
+					</div>
+					<div class="control">
+						<input id="pan" class="pan-param" data-param="pan" type="range" min="0" max="2" step="0.02" value="2">
+						<label for="pan">autopan</label>
+					</div>
+					<div class="control">
+						<input id="limit" class="limit-param" data-param="limit" type="range" min="0" max="4" step="0.05" value="0">
+						<label for="limit">limit</label>
+					</div>					
+				</div>
+			</section>
+		</main>
+		<script src="dist/scripts/main.js"></script>
+		<script>
+		var synth = new PolySynthUI();
+		</script>
+	</body>
+</html>
